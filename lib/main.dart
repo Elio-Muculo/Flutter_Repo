@@ -92,7 +92,7 @@ class MyApp extends StatelessWidget {
     //     );
 
     return Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
+      return MaterialApp( 
          useInheritedMediaQuery: true,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
