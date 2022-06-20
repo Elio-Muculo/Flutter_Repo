@@ -32,7 +32,7 @@ class TextLesson extends StatelessWidget {
         child: Center(
           child: RichText(
             text: TextSpan(
-              text: "ola mundo",
+              text: "Elio Muculo",
               children: textspans,
             ),
           ),
