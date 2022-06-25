@@ -14,6 +14,21 @@ class AssetsLesson extends StatelessWidget {
           repeat: ImageRepeat.noRepeat,
           // errorBuilder: , // when image fail to load call this propriety and handle the error.
         ),
+        const Icon(
+          Icons.add_alarm,
+          color: Colors.amber,
+          size: 40,
+          textDirection: TextDirection.rtl,
+        ),
+        IconButton( // button, mas com icon no lugar do texto. com evento ao clicar no button,
+          onPressed: () => {},  // event when press the button
+          icon: const Icon(
+            Icons.add_alarm,
+            color: Color.fromARGB(255, 7, 65, 255),
+            size: 40,
+            textDirection: TextDirection.rtl,
+          ),
+        ),
       ]
     );
   }
