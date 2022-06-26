@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:Login/ThemeWidget.dart';
+import 'package:Login/whatsappUi/whatsapp.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'customtheme.dart';
@@ -21,33 +22,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    Color whatsappGreen = Color.fromRGBO(18, 140, 126, 1.0);
     
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp( 
-        darkTheme: customDarkTheme(),
-        theme: customLightTheme(),
-        themeMode: ThemeMode.system,
         useInheritedMediaQuery: true,
+        themeMode: ThemeMode.dark,
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          resizeToAvoidBottomInset: false,
-          appBar: AppBar(
-            centerTitle: true,
-            title: const Text('Elliot.Dev'),
-            backgroundColor: Theme.of(context).primaryColorLight,
-            actions: const [
-              Icon(Icons.more_vert, color: Colors.white),
-            ],
-            elevation: 2.0,
-          ),
-          body: SafeArea(child: ThemeLesson()),
-          // bottomNavigationBar: bottomMenu,
-          // floatingActionButton: floatButton,
-          // drawer: hiddenMenu,
-        ),
+        home: Whatsapp(),
       );
     });
   }
