@@ -32,11 +32,14 @@ ThemeData customLightTheme() {
  
   final ThemeData lightTheme = ThemeData.light();
     return lightTheme.copyWith(
+      colorScheme: ColorScheme.fromSwatch(
+        primarySwatch: Colors.amber
+      ),
       textTheme: _customLightThemesTextTheme(lightTheme.textTheme),
-        primaryColor: const Color(0xffce107c),
-        indicatorColor: const Color(0xFF807A6B),
-        scaffoldBackgroundColor: const Color(0xFFF5F5F5),
-        primaryIconTheme: lightTheme.primaryIconTheme.copyWith(
+      primaryColor: const Color(0xffce107c),
+      indicatorColor: const Color(0xFF807A6B),
+      scaffoldBackgroundColor: const Color(0xFFF5F5F5),
+      primaryIconTheme: lightTheme.primaryIconTheme.copyWith(
         color: Colors.white,
         size: 20,
       ),
@@ -50,6 +53,9 @@ ThemeData customLightTheme() {
       ),
       buttonTheme: lightTheme.buttonTheme.copyWith(buttonColor: Colors.red),
       errorColor: Colors.red,
+      appBarTheme: const AppBarTheme().copyWith(
+        color: Colors.amber
+      ),
     );
  }
  
