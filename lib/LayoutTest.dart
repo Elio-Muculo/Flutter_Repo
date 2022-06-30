@@ -1,3 +1,4 @@
+import 'package:Login/Interativity.dart';
 import 'package:flutter/material.dart';
 
 class LayoutTestOne extends StatelessWidget {
@@ -21,11 +22,7 @@ class LayoutTestOne extends StatelessWidget {
               ],
             ),
           ),
-          const Icon(
-            Icons.star,
-            color: Color.fromARGB(200, 234, 143, 6),
-          ),
-          const Text('41')
+          Interatividade(),
         ],
       ),
     );

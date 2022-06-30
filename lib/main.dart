@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:Login/LayoutTest.dart';
 import 'package:Login/ThemeWidget.dart';
 import 'package:Login/whatsappUi/whatsapp.dart';
 import 'package:flutter/foundation.dart';
@@ -31,8 +32,25 @@ class MyApp extends StatelessWidget {
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
-        home: Whatsapp(),
+        home: Scaffold(
+          resizeToAvoidBottomInset: false,
+          // appBar: AppBar(
+          //   centerTitle: true,
+          //   title: const Text('Elliot.Dev'),
+          //   backgroundColor: const Color.fromARGB(255, 129, 91, 184),
+          //   actions: const [
+          //     Icon(Icons.more_vert, color: Colors.white),
+          //   ],
+          //   elevation: 2.0,
+          // ),
+          body: SafeArea(child: LayoutTestOne()),
+          // bottomNavigationBar: bottomMenu,
+          // floatingActionButton: floatButton,
+          // drawer: hiddenMenu,
+        ),
       );
     });
   }
 }
+
+
