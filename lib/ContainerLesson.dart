@@ -8,14 +8,14 @@ class Todos {
 
 }
 
-void main(List<String> args) {
-  runApp(
-    MaterialApp(
-      initialRoute: '/',
-      routes: Routes.generate(),
-    )
-  );
-}
+// void main(List<String> args) {
+//   runApp(
+//     MaterialApp(
+//       initialRoute: '/',
+//       routes: Routes.generate(),
+//     )
+//   );
+// }
 
 class ContainerLesson extends StatelessWidget {
   const ContainerLesson({Key? key}) : super(key: key);
@@ -34,12 +34,7 @@ class ContainerLesson extends StatelessWidget {
           SizedBox(
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  Routes.details,
-                  arguments: const Todos('ola mundo')
-                );
-              },
+                Navigator.pop(context);},
               child: const Text("Click here"),
             ),
           )
