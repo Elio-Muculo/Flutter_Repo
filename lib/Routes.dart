@@ -34,9 +34,9 @@ class Routes {
       switch (settings.name) {
         case '/':
           return MaterialPageRoute(builder: ((context) => const HomeScreen()));
-        case ExtractArgumentsScreen.routeName:
-        final args = settings.arguments as ScreenArguments;
-          return MaterialPageRoute(builder: ((context) => ExtractArgumentsScreen(args: args)));
+        // case ExtractArgumentsScreen.routeName:
+        // final args = settings.arguments as ScreenArguments;
+          // return MaterialPageRoute(builder: ((context) => ExtractArgumentsScreen()));
         case PassArgumentsScreen.routeName:
         final args = settings.arguments as ScreenArguments;
           return MaterialPageRoute(

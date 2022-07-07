@@ -9,12 +9,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       // Provide a function to handle named routes.
       // Use this function to identify the named
       // route being pushed, and create the correct
       // Screen.
       onGenerateRoute: Routes.generateR,
+      routes: {ExtractArgumentsScreen.routeName: ((context) => const ExtractArgumentsScreen())},
       title: 'Navigation with Arguments',
     );
   }
@@ -84,8 +85,8 @@ class HomeScreen extends StatelessWidget {
 // A Widget that extracts the necessary arguments from
 // the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
-  final ScreenArguments args;
-  const ExtractArgumentsScreen({super.key, required this.args});
+  // final ScreenArguments args;
+  const ExtractArgumentsScreen({super.key});
 
   static const routeName = '/extractArguments';
 
@@ -93,7 +94,7 @@ class ExtractArgumentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Extract the arguments from the current ModalRoute
     // settings and cast them as ScreenArguments.
-    // final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
+    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
       appBar: AppBar(
