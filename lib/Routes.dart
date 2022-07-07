@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:Login/ContainerLesson.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +11,9 @@ class Routes {
 
   static Map<String, WidgetBuilder> getRoutes() {
     return {
-      Routes.signIn: (context) => FirstScreen(),
-      Routes.signUp: (context) => SecondScreen(),
-      Routes.deep: (context) => ContainerLesson(),
+      Routes.signIn: (context) => const FirstScreen(),
+      Routes.signUp: (context) => const SecondScreen(),
+      Routes.deep: (context) => const ContainerLesson(),
     };
   }
 }
