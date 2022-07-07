@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:Login/NavigatorRoutes.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'Routes.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
-        routes: Routes.getRoutes(),
+        routes: Routes.generate(),
         // home: Scaffold(
         //   resizeToAvoidBottomInset: false,
         //   // appBar: AppBar(

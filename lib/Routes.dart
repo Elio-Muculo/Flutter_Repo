@@ -5,17 +5,21 @@ import 'package:flutter/material.dart';
 import 'NavigationR.dart';
 
 class Routes {
-  static const signIn = '/';
+  static const home = '/';
   static const signUp = '/signUp';
-  static const deep = '/signUp/moreDeep';
+  static const details = '/details';
 
-  static Map<String, WidgetBuilder> getRoutes() {
+  static Map<String, WidgetBuilder> generate() {
     return {
-      Routes.signIn: (context) => const FirstScreen(),
-      Routes.signUp: (context) => const SecondScreen(),
-      Routes.deep: (context) => const ContainerLesson(),
+      Routes.details: (context) => const DetailsScreen(),
+      Routes.home: (context) => const ContainerLesson()
     };
   }
 }
+
+
+
+
+
 
 
