@@ -1,15 +1,8 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:Login/Gesture.dart';
-import 'package:Login/LayoutTest.dart';
-import 'package:Login/NavigationR.dart';
-import 'package:Login/ThemeWidget.dart';
-import 'package:Login/whatsappUi/whatsapp.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'Routes.dart';
-import 'customtheme.dart';
-import 'LoginUI/LoginScreen.dart';
 import 'package:sizer/sizer.dart';
 import 'package:device_preview/device_preview.dart';
 
