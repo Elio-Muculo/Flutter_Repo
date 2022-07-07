@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       // Use this function to identify the named
       // route being pushed, and create the correct
       // Screen.
-      onGenerateRoute: Routes.generateR,
+      // onGenerateRoute: Routes.generateR,
       routes: {ExtractArgumentsScreen.routeName: ((context) => const ExtractArgumentsScreen())},
       title: 'Navigation with Arguments',
     );
