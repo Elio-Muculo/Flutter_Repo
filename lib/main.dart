@@ -2,10 +2,12 @@
 
 import 'package:Login/Gesture.dart';
 import 'package:Login/LayoutTest.dart';
+import 'package:Login/NavigationR.dart';
 import 'package:Login/ThemeWidget.dart';
 import 'package:Login/whatsappUi/whatsapp.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'Routes.dart';
 import 'customtheme.dart';
 import 'LoginUI/LoginScreen.dart';
 import 'package:sizer/sizer.dart';
@@ -33,25 +35,24 @@ class MyApp extends StatelessWidget {
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          resizeToAvoidBottomInset: false,
-          // appBar: AppBar(
-          //   centerTitle: true,
-          //   title: const Text('Elliot.Dev'),
-          //   backgroundColor: const Color.fromARGB(255, 129, 91, 184),
-          //   actions: const [
-          //     Icon(Icons.more_vert, color: Colors.white),
-          //   ],
-          //   elevation: 2.0,
-          // ),
-          body: SafeArea(child: Handle()),
-          // bottomNavigationBar: bottomMenu,
-          // floatingActionButton: floatButton,
-          // drawer: hiddenMenu,
-        ),
+        initialRoute: '/',
+        routes: Routes.getRoutes(),
+        // home: Scaffold(
+        //   resizeToAvoidBottomInset: false,
+        //   // appBar: AppBar(
+        //   //   centerTitle: true,
+        //   //   title: const Text('Elliot.Dev'),
+        //   //   backgroundColor: const Color.fromARGB(255, 129, 91, 184),
+        //   //   actions: const [
+        //   //     Icon(Icons.more_vert, color: Colors.white),
+        //   //   ],
+        //   //   elevation: 2.0,
+        //   // ),
+          
       );
     });
   }
 }
+
 
 
