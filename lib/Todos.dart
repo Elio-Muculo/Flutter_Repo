@@ -61,8 +61,12 @@ class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key, required this.todo});
   final Todo todo;
 
+  // or
+
+
   @override
   Widget build(BuildContext context) {
+  // final todo = ModalRoute.of(context)!.settings.arguments as Todo;
     // Use the Todo to create the UI.
     return Scaffold(
       appBar: AppBar(

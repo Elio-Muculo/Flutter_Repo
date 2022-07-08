@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:Login/NavigatorRoutes.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'Routes.dart';

@@ -1,5 +1,6 @@
 // ignore: file_names
 
+import 'package:Login/Clipped.dart';
 import 'package:Login/ContainerLesson.dart';
 import 'package:Login/Todos.dart';
 import 'package:flutter/material.dart';
@@ -46,23 +47,21 @@ class Routes {
     }
   }
 
-  // static Route<dynamic> generateR(RouteSettings settings) {
-  //     switch (settings.name) {
-  //       case '/':
-  //         return MaterialPageRoute(builder: ((context) => const HomeScreen()));
-  //       // case ExtractArgumentsScreen.routeName:
-  //       // final args = settings.arguments as ScreenArguments;
-  //         // return MaterialPageRoute(builder: ((context) => ExtractArgumentsScreen()));
-  //       case PassArgumentsScreen.routeName:
-  //       final args = settings.arguments as ScreenArguments;
-  //         return MaterialPageRoute(
-  //             builder: (context) => PassArgumentsScreen(
-  //                   title: args.title,
-  //                   message: args.message,
-  //                 ));
-  //       default:
-  //         return MaterialPageRoute(
-  //             builder: ((context) => const ContainerLesson()));
-  //     }
-  // }
+  static Route<dynamic> generateR(RouteSettings settings) {
+      switch (settings.name) {
+        case '/':
+          return MaterialPageRoute(builder: ((context) => const ClippedRecct()));
+        case PassArgumentsScreen.routeName:
+        final args = settings.arguments as ScreenArguments;
+          return MaterialPageRoute(
+              builder: (context) => PassArgumentsScreen(
+                    title: args.title,
+                    message: args.message,
+                  ));
+        default:
+          return MaterialPageRoute(
+              builder: ((context) => const ContainerLesson()));
+      }
+  }
 }
+
