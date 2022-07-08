@@ -11,6 +11,7 @@ class Clipped extends StatelessWidget {
   static const String clipRect = '/rect';
   static const String clipOval = '/oval';
   static const String clipCircular = '/circular';
+  static const String clipPath = '/path';
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,9 @@ class Clipped extends StatelessWidget {
           case Clipped.clipRect:
             return MaterialPageRoute(
                 builder: ((context) => const ClippedRect()));
+          case Clipped.clipPath:
+            return MaterialPageRoute(
+                builder: ((context) => const ClippedPath()));
           case Clipped.clipOval:
             return MaterialPageRoute(
                 builder: ((context) => const ClippedOval()));
@@ -57,6 +61,8 @@ class HomeScreen extends StatelessWidget {
             Button(route: Clipped.clipCircular, title: 'circular clip'),
             SizedBox(height: 10,),
             Button(route: Clipped.clipOval, title: 'Oval clip'),
+            SizedBox(height: 10,),
+            Button(route: Clipped.clipPath, title: 'Custom clip'),
           ],
         ),
       ),
@@ -71,10 +77,12 @@ class ClippedRecct extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Circular')),
-      body: const Align(
-        alignment: Alignment.center,
-        child: Text('circular')
-      ),
+      body: ClipRRect(
+          borderRadius: BorderRadius.circular(250.0),
+          child: Image.network(
+            "https://images.unsplash.com/photo-1523285367489-d38aec03b6bd"
+          ),
+        ),
     );
   }
 }
@@ -102,9 +110,17 @@ class ClippedRect extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Rect')),
-      body: const Align(
-        alignment: Alignment.center,
-        child: Text("Clipped rect art"),
+      body: ClipRect(
+        child: Container(
+          child: Align(
+            alignment: Alignment.center,
+            widthFactor: 0.4,
+            heightFactor: 1.0,
+            child: Image.network(
+              'https://images.unsplash.com/photo-1473992243898-fa7525e652a5'
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -117,10 +133,46 @@ class ClippedOval extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(title: const Text('Oval')),
-      body: const Align(
-        alignment: Alignment.center,
-        child: Text("Clipped oval art"),
+      body: ClipOval(
+        child: Container(
+          child: Image.network(
+            'https://images.unsplash.com/photo-1523965671143-ac717f1cb928'
+          ),
+        ),
       ),
     );
   }
 }
+
+class ClippedPath extends StatelessWidget {
+  const ClippedPath({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+       appBar: AppBar(title: const Text('Oval')),
+        body: ClipPath(
+        clipper: TriangleClipper(),
+        child: Image.network(
+          "https://images.unsplash.com/photo-1513775192371-1b9d33760c3f"
+        ),
+      ),
+    );
+  }
+}
+
+class TriangleClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+      final path = Path();
+      path
+      ..moveTo(size.width/2, 0.0)
+      ..lineTo(size.width, size.height)
+      ..lineTo(0.0, size.height)
+      ..close();
+      return path;
+  }
+  @override
+  bool shouldReclip(TriangleClipper oldClipper) => false;
+}
+
