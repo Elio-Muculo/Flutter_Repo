@@ -15,6 +15,7 @@ class Clipped extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/':
@@ -68,8 +69,9 @@ class ClippedRecct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Align(
+    return Scaffold(
+      appBar: AppBar(title: const Text('Circular')),
+      body: const Align(
         alignment: Alignment.center,
         child: Text('circular')
       ),
@@ -98,8 +100,9 @@ class ClippedRect extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Align(
+    return Scaffold(
+      appBar: AppBar(title: const Text('Rect')),
+      body: const Align(
         alignment: Alignment.center,
         child: Text("Clipped rect art"),
       ),
@@ -112,8 +115,9 @@ class ClippedOval extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Align(
+    return Scaffold(
+       appBar: AppBar(title: const Text('Oval')),
+      body: const Align(
         alignment: Alignment.center,
         child: Text("Clipped oval art"),
       ),
