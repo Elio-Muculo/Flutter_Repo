@@ -31,10 +31,24 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType ) {
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
           backgroundColor: Colors.white,
-          appBar: AppBar(
-            title: const Text('Tabbar'),
+          appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(100),
+            child: SafeArea(
+              child: Container(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:  [
+                    IconButton(icon: const Icon(Icons.menu), iconSize: 30.0, onPressed: () {},),
+                    const Text('Customer App Bar', style: TextStyle(fontSize: 20.0),),
+                    IconButton(icon: const Icon(Icons.settings), iconSize: 30.0, onPressed: () {},),
+                  ],
+                ),
+              ),
+            ),
           ),
           body: SingleChildScrollView(
             child: Padding(
