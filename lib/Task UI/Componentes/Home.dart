@@ -13,7 +13,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        height: 45.h,
+        height: 100.h,
       ),
     );
   }
@@ -22,25 +22,27 @@ class _HomeState extends State<Home> {
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key? key, required this.height}) : super(key: key);
   final double height;
+  
 
   @override
   Widget build(BuildContext context) {
     return SizedBox.fromSize(
       size: preferredSize,
-      child: Stack(
-        children: [
+      // ignore: todo
+      // TODO: Get ride of this Stack here.
+      child: Align(
+        alignment: Alignment.topCenter,
+        child: 
           Container(
             width: 100.w,
-            height: 100.h,
+            height: 45.h,
             decoration: const BoxDecoration(
                 color: Color(0xFF33c8c6),
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30))),
             child: Tabs(),
-          ),
-
-        ],
+          )
       ),
     );
   }
@@ -88,6 +90,7 @@ class _TabsState extends State<Tabs> with TickerProviderStateMixin {
               ),
             Container(
               height: 7.h,
+              width: 90.w,
               padding: EdgeInsets.symmetric(horizontal: 4.h),
               margin: EdgeInsets.only(top: 4.h),
               child: Container(
@@ -110,6 +113,8 @@ class _TabsState extends State<Tabs> with TickerProviderStateMixin {
             ),
           ],
         ),
+        // ignore: todo
+        // TODO: change this container with Stack 
        Container(
         padding: EdgeInsets.symmetric(vertical: 2.w),
         height: 10.h,
@@ -151,8 +156,7 @@ class _FreelancerState extends State<Freelancer> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Stack(
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -202,6 +206,10 @@ class Employeer extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
+            width: 100.w,
+            decoration: BoxDecoration( 
+              color: Colors.black
+            ),
             child: const Text(
               'Employeer',
               // style: TextStyle(color: Color.fromARGB(0, 0, 0, 0)),
