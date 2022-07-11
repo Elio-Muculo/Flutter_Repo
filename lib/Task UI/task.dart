@@ -31,10 +31,7 @@ class _MyAppState extends State<MyApp> {
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
-        home: Scaffold(
-          resizeToAvoidBottomInset: false,
-          body: Home(),
-        ), 
+        home: Home(),
       );
     });
   }
