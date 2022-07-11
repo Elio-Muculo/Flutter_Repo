@@ -14,13 +14,13 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.w),
+          padding: EdgeInsets.symmetric(horizontal: 5.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 15.h,),
+              SizedBox(height: 10.h,),
               Image.asset(
-                'images/concept-of-remote-team.png'
+                'assets/images/concept-of-remote-team.png'
               ),
               Container(
                 width: 80.w,
@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 5.h),
                       child: Text('lorem impsum its simple a dummy of text of the printing and typescripting industry', 
-                        style: TextStyle(color: const Color(0xFF1d2940), fontSize: 20.sp,),),
+                        style: TextStyle(color: const Color(0xFF1d2940), fontSize: 16.sp,),),
                     )
                   ],
                 ),
