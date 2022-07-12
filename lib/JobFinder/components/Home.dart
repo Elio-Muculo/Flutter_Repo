@@ -80,7 +80,7 @@ class _HomeState extends State<Home> {
                 SizedBox(height: 8.w),
                 Text("New Arrivals", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w700, color: Color.fromRGBO(29, 41, 64, 1.0))),
                 SizedBox(height: 2.5.w),
-                // _makeNewArrivalsEl(Theme.of(context).scaffoldBackgroundColor),
+                _makeNewArrivalsEl(Theme.of(context).scaffoldBackgroundColor),
               ],
             ),
           ),
@@ -107,18 +107,18 @@ Widget _makeSuggestedJobsEl() {
 }
 
 
-/// Make new arrival jobs widget.
-// Widget _makeNewArrivalsEl(Color color) {
-//   return Column(
-//     children: [
-//       _makeNewArrivalJobEl(JobList.twitterJob, color),
-//       SizedBox(height: 4.w),
-//       _makeNewArrivalJobEl(JobList.teslaJob, color),
-//       SizedBox(height: 4.w),
-//       _makeNewArrivalJobEl(JobList.googleJob2, color),
-//     ],
-//   );
-// }
+// / Make new arrival jobs widget.
+Widget _makeNewArrivalsEl(Color color) {
+  return Column(
+    children: [
+      _makeNewArrivalJobEl(JobList.twitterJob, color),
+      SizedBox(height: 4.w),
+      _makeNewArrivalJobEl(JobList.teslaJob, color),
+      SizedBox(height: 4.w),
+      _makeNewArrivalJobEl(JobList.googleJob2, color),
+    ],
+  );
+}
 
 /// Make suggested job card widget.
 Widget _makeSuggestedJobCardEl(Job job) {
@@ -143,5 +143,42 @@ Widget _makeSuggestedJobCardEl(Job job) {
         ],
       ),
     ),
+  );
+}
+
+
+/// Make new arrival job widget.
+Widget _makeNewArrivalJobEl(Job job, Color color) {
+  return Container(
+    height: 15.h,
+    decoration: BoxDecoration(
+      border: Border.all(color: Colors.grey, width: 0.1),
+      borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+      color: color,
+    ),
+    child: Padding(
+      padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 7.w),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Image.asset("assets/icons/${job.image}", width: 25.0),
+              SizedBox(width: 6.w),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(job.position, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.sp)),
+                  SizedBox(height: 1.h),
+                  Text(job.company, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp, color: Colors.grey)),
+                ],
+              ),
+            ],
+          ),
+          const Icon(LineIcons.chevronCircleRight),
+        ],
+      ),
+    )
   );
 }
