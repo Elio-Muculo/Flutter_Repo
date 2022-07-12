@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
-        home: Home(),
+        home: SplashScreen(),
       );
     });
   }

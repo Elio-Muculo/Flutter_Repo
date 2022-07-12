@@ -7,7 +7,7 @@ import '../data/job_list.dart';
 import '../model/job.dart';
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         elevation: 0.5,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        leading: Icon(LineIcons.creativeCommonsNoDerivativeWorks, color: Colors.black87, size: 22.sp,),
+        leading: IconButton(icon: Icon(LineIcons.creativeCommonsNoDerivativeWorks, color: Colors.black87, size: 22.sp), onPressed: () => Navigator.of(context).pop(context),),
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 3.w),
