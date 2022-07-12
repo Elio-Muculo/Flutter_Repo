@@ -168,7 +168,7 @@ Widget _makeNewArrivalJobEl(Job job, Color color) {
         children: [
           Row(
             children: [
-              Image.asset("assets/icons/${job.image}", width: 25.0),
+              Image.asset("assets/icons/${job.image}", width: 10.w),
               SizedBox(width: 6.w),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -181,7 +181,7 @@ Widget _makeNewArrivalJobEl(Job job, Color color) {
               ),
             ],
           ),
-          const Icon(LineIcons.chevronCircleRight),
+          Icon(LineIcons.chevronCircleRight, size: 8.w,),
         ],
       ),
     )
