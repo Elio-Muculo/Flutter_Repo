@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
         leading: Icon(LineIcons.creativeCommonsNoDerivativeWorks, color: Colors.black87, size: 22.sp,),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 2.5.w),
+            padding: EdgeInsets.only(right: 3.w),
             child: Row(
               children: [
                 Icon(LineIcons.sms, color: Colors.black87, size: 22.sp,),
@@ -37,7 +37,7 @@ class _HomeState extends State<Home> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(  
-            padding: EdgeInsets.only(top: 3.w, right: 2.5.w, left: 2.5.w),
+            padding: EdgeInsets.only(top: 5.5.w, right: 3.w, left: 3.w),
             child: Column(  
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -54,11 +54,11 @@ class _HomeState extends State<Home> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(right: 4.w),
-                      child: Image.asset("assets/images/avatar.png", width: 10.w,)
+                      child: Image.asset("assets/images/avatar.png", width: 12.w,)
                     ),
                   ],
                 ), 
-                SizedBox(height: 8.w,),
+                SizedBox(height: 9.w,),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
@@ -73,13 +73,13 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                SizedBox(height: 8.w,),
+                SizedBox(height: 9.w,),
                 Text("Suggested Job", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w700, color: const Color.fromRGBO(29, 41, 64, 1.0)),),
-                SizedBox(height: 2.5.w,),
+                SizedBox(height: 2.8.w,),
                 _makeSuggestedJobsEl(),
-                SizedBox(height: 8.w),
+                SizedBox(height: 9.w),
                 Text("New Arrivals", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w700, color: Color.fromRGBO(29, 41, 64, 1.0))),
-                SizedBox(height: 2.5.w),
+                SizedBox(height: 2.8.w),
                 _makeNewArrivalsEl(Theme.of(context).scaffoldBackgroundColor),
               ],
             ),
@@ -98,6 +98,8 @@ Widget _makeSuggestedJobsEl() {
   contents.add(_makeSuggestedJobCardEl(JobList.microsoftJob));
   contents.add(SizedBox(width: 4.w));
   contents.add(_makeSuggestedJobCardEl(JobList.googleJob1));
+  contents.add(SizedBox(width: 4.w));
+  contents.add(_makeSuggestedJobCardEl(JobList.spotifyJob));
   return SingleChildScrollView(
     scrollDirection: Axis.horizontal,
     child: Row(
@@ -111,6 +113,8 @@ Widget _makeSuggestedJobsEl() {
 Widget _makeNewArrivalsEl(Color color) {
   return Column(
     children: [
+      _makeNewArrivalJobEl(JobList.teslaJob, color),
+      SizedBox(height: 4.w),
       _makeNewArrivalJobEl(JobList.twitterJob, color),
       SizedBox(height: 4.w),
       _makeNewArrivalJobEl(JobList.teslaJob, color),
@@ -123,7 +127,7 @@ Widget _makeNewArrivalsEl(Color color) {
 /// Make suggested job card widget.
 Widget _makeSuggestedJobCardEl(Job job) {
   return Container(
-    height: 35.h,
+    height: 46.5.w,
     width: 40.w,
     decoration: BoxDecoration(
       borderRadius: const BorderRadius.all(Radius.circular(15.0)),
@@ -132,14 +136,15 @@ Widget _makeSuggestedJobCardEl(Job job) {
     child: Center(
       child: Column(
         children: [
-          SizedBox(height: 5.h),
-          Image.asset("assets/icons/${job.image}", width: 6.w),
-          SizedBox(height: 8.w),
-          Text(job.position, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.sp)),
+          SizedBox(height: 3.h),
+          Flexible(flex: 2, child: Image.asset("assets/icons/${job.image}", width: 7.5.w)),
+          SizedBox(height: 8.5.w),
+          Flexible(child: Text(job.position, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.sp))),
           SizedBox(height: 1.w),
-          Text(job.company, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 9.sp, color: Colors.grey)),
-          SizedBox(height: 6.w),
-          Text(job.site, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp)),
+          Flexible(child: Text(job.company, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 9.sp, color: Colors.grey))),
+          SizedBox(height: 6.5.w),
+          Flexible(child: Text(job.site, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp))),
+          SizedBox(height: 3.h),
         ],
       ),
     ),
@@ -150,14 +155,14 @@ Widget _makeSuggestedJobCardEl(Job job) {
 /// Make new arrival job widget.
 Widget _makeNewArrivalJobEl(Job job, Color color) {
   return Container(
-    height: 15.h,
+    height: 13.h,
     decoration: BoxDecoration(
       border: Border.all(color: Colors.grey, width: 0.1),
       borderRadius: const BorderRadius.all(Radius.circular(15.0)),
       color: color,
     ),
     child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 7.w),
+      padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 7.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -170,7 +175,7 @@ Widget _makeNewArrivalJobEl(Job job, Color color) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(job.position, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.sp)),
-                  SizedBox(height: 1.h),
+                  SizedBox(height: 0.75.h),
                   Text(job.company, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp, color: Colors.grey)),
                 ],
               ),
