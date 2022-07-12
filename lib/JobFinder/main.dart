@@ -1,4 +1,5 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:Login/JobFinder/components/Home.dart';
 import 'package:Login/JobFinder/components/SplashScreen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class _MyAppState extends State<MyApp> {
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
-        home: SplashScreen(),
+        home: Home(),
       );
     });
   }
