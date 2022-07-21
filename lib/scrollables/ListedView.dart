@@ -8,9 +8,19 @@ class view extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: ListView.builder(
+          physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) {
-            return const ListTile(
-              leading: Icon(Icons.settings),
+            return const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('on repeat'),
+                subtitle: Text('i\'m repeating'),
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.black),
+                  borderRadius: BorderRadius.all(Radius.circular(16))
+                ),
+              ),
             );
           }
         ),
