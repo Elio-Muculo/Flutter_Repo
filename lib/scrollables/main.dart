@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:Login/scrollables/Custom.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
-        home: view(),
+        home: Custom(),
       );
     });
   }
