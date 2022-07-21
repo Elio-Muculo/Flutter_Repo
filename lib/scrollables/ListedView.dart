@@ -7,12 +7,16 @@ class view extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListView.builder(itemBuilder: (context, index) {
-          return const ListTile(
-            leading: Icon(Icons.settings),
-          );
-        }),
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return const ListTile(
+              leading: Icon(Icons.settings),
+            );
+          }
+        ),
       ),
     );
   }
 }
+
+
