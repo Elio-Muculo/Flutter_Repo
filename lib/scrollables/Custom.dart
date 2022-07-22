@@ -14,6 +14,8 @@ class _CustomState extends State<Custom> {
       slivers: <Widget>[
         const SliverAppBar(
           pinned: true,
+          snap: false,
+          floating: true,
           expandedHeight: 250.0,
           flexibleSpace: FlexibleSpaceBar(
             title: Text('Demo'),
